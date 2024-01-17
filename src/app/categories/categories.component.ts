@@ -5,6 +5,8 @@ import { MatSortModule, MatSort } from '@angular/material/sort';
 import { CategoriesDataSource, CategoriesItem } from './categories-datasource';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { CategoryService } from './category.service';
+import { lastValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-categories',
@@ -24,12 +26,22 @@ export class CategoriesComponent implements AfterViewInit {
   @ViewChild(MatTable) table!: MatTable<CategoriesItem>;
   dataSource = new CategoriesDataSource();
 
+
+
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['id', 'name'];
+
+  constructor(private categoryService:CategoryService){}
 
   ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
+    this.getData();
   }
+
+  async getData() {
+    console.log(await lastValueFrom(this.categoryService.getAll()))
+  }
+
 }
