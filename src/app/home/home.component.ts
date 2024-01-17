@@ -9,7 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { MenuComponent } from '../menu/menu.component';
-import { CategoriesComponent } from '../categories/categories.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -24,7 +24,7 @@ import { CategoriesComponent } from '../categories/categories.component';
     MatIconModule,
     AsyncPipe,
     MenuComponent,
-    CategoriesComponent
+    RouterOutlet
   ]
 })
 export class HomeComponent {
