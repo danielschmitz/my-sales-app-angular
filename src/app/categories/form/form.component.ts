@@ -20,4 +20,8 @@ export class CategoryFormComponent {
     description: [null, Validators.required]
   })
 
+  onSubmit() {
+    console.log('Submit', this.categoryForm.value)
+  }
+
 }

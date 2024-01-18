@@ -6,7 +6,7 @@ import {
 } from '@angular/material/table';
 import { MatPaginatorModule, MatPaginator } from '@angular/material/paginator';
 import { MatSortModule, MatSort } from '@angular/material/sort';
-import { CategoriesDataSource, CategoriesItem } from './categories-datasource';
+import { CategoriesItem } from './categories-datasource';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { CategoryService } from './category.service';
@@ -39,6 +39,8 @@ export class CategoriesComponent implements AfterViewInit {
   @ViewChild(MatTable) table!: MatTable<CategoriesItem>;
   dataSource = new MatTableDataSource<Category>();
 
+  showForm: Boolean = false;
+
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['id', 'name', 'description'];
 
@@ -54,5 +56,10 @@ export class CategoriesComponent implements AfterViewInit {
     this.table.dataSource = this.dataSource;
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
+  }
+
+  onNewCategoryClick(){
+    console.log('onNewCategoryClick')
+    this.showForm = true;
   }
 }

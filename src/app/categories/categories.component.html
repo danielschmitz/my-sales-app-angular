@@ -4,8 +4,9 @@
     <mat-card-subtitle>Listing all categories</mat-card-subtitle>
   </mat-card-header>
 
-  <category-form></category-form>
-
+  @if (showForm) {
+    <category-form></category-form>
+  } @else {
   <mat-card-content>
     <table mat-table class="full-width-table" matSort aria-label="Elements">
       <!-- Id Column -->
@@ -42,6 +43,7 @@
   </mat-card-content>
 
   <mat-card-actions>
-    <button mat-button>New Category</button>
+    <button mat-button (click)="onNewCategoryClick()">New Category</button>
   </mat-card-actions>
+  }
 </mat-card>

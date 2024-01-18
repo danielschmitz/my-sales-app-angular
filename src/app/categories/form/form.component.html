@@ -1,19 +1,32 @@
 <mat-card-content>
-  <form [formGroup]="categoryForm" novalidate class="container">
-    <mat-form-field class="item-30">
-      <input matInput placeholder="Name" formControlName="name" />
-      @if (categoryForm.controls['name'].hasError('required')) {
+  <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="container">
+      <mat-form-field class="item-30">
+        <input matInput placeholder="Name" formControlName="name" />
+        @if (categoryForm.controls['name'].hasError('required')) {
         <mat-error>Name is <strong>required</strong></mat-error>
-      }
-      @if (categoryForm.controls['name'].hasError('minlength')) {
+        } @if (categoryForm.controls['name'].hasError('minlength')) {
         <mat-error>Name is too short</mat-error>
-      }
-    </mat-form-field>
-    <mat-form-field class="item-70">
-      <input matInput placeholder="Description" formControlName="description" />
-      @if (categoryForm.controls['description'].hasError('required')) {
+        }
+      </mat-form-field>
+      <mat-form-field class="item-70">
+        <input
+          matInput
+          placeholder="Description"
+          formControlName="description"
+        />
+        @if (categoryForm.controls['description'].hasError('required')) {
         <mat-error>Description is <strong>required</strong></mat-error>
-      }
-    </mat-form-field>
+        }
+      </mat-form-field>
+    </div>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="!categoryForm.valid"
+    >
+      Save
+    </button>
   </form>
 </mat-card-content>
