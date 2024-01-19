@@ -58,8 +58,18 @@ export class CategoriesComponent implements AfterViewInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  onNewCategoryClick(){
-    console.log('onNewCategoryClick')
+  onNewCategoryClick() {
     this.showForm = true;
+  }
+
+  hideCategoryForm() {
+    this.showForm = false;
+    this.loadCategories();
+  }
+
+  async onSave(category: Category) {
+    const saved = await lastValueFrom(this.categoryService.save(category));
+    console.log('Saved', saved);
+    this.hideCategoryForm();
   }
 }

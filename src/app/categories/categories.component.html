@@ -5,7 +5,7 @@
   </mat-card-header>
 
   @if (showForm) {
-    <category-form></category-form>
+    <category-form (back)="hideCategoryForm()" (save)="onSave($event)"></category-form>
   } @else {
   <mat-card-content>
     <table mat-table class="full-width-table" matSort aria-label="Elements">

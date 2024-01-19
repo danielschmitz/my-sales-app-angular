@@ -5,13 +5,22 @@ import { Observable } from 'rxjs';
 import { Category } from './category.dto';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CategoryService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http:HttpClient) { }
+  public getAll(): Observable<Category[]> {
+    return this.http.get<Category[]>(environment.api + 'categories');
+  }
 
-  public getAll():Observable<Category[]> {
-    return this.http.get<Category[]>(environment.api + "categories")
+  public save(category: Category): Observable<Category> {
+    if (category.id)
+      return this.http.put<Category>(
+        environment.api + 'categories/' + category.id,
+        category
+      );
+
+    return this.http.post<Category>(environment.api + 'categories', category);
   }
 }
