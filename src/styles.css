@@ -6,7 +6,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .container {
   display: flex;
   flex-direction: row;
-  align-items: center;
   gap: 10px;
 }
 .item-20 { flex: 0 0 20%; }
@@ -17,6 +16,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .item-70 { flex: 0 0 70%; }
 .item-80 { flex: 0 0 80%; }
 .item { flex: 1 1 auto; }
+.center {
+  align-items: center;
+  justify-content: center;
+}
 /* tablet or mobile */
 @media (max-width: 768px) {
   .container {
