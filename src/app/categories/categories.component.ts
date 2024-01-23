@@ -13,6 +13,8 @@ import { CategoryService } from './category.service';
 import { lastValueFrom } from 'rxjs';
 import { Category } from './category.dto';
 import { CategoryFormComponent } from './form/form.component';
+import { MatIconModule } from '@angular/material/icon';
+import { LoadingBarComponent } from '../loading-bar.component';
 
 @Component({
   selector: 'app-categories',
@@ -30,7 +32,9 @@ import { CategoryFormComponent } from './form/form.component';
     MatSortModule,
     MatCardModule,
     MatButtonModule,
+    MatIconModule,
     CategoryFormComponent,
+    LoadingBarComponent
   ],
 })
 export class CategoriesComponent implements AfterViewInit {
@@ -39,10 +43,14 @@ export class CategoriesComponent implements AfterViewInit {
   @ViewChild(MatTable) table!: MatTable<CategoriesItem>;
   dataSource = new MatTableDataSource<Category>();
 
+  showLoading: Boolean = false;
+
+  category!: Category;
+
   showForm: Boolean = false;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name', 'description'];
+  displayedColumns = ['id', 'name', 'description', 'actions'];
 
   constructor(private categoryService: CategoryService) {}
 
@@ -51,14 +59,21 @@ export class CategoriesComponent implements AfterViewInit {
   }
 
   async loadCategories(): Promise<void> {
+    this.showLoading = true;
     const categories = await lastValueFrom(this.categoryService.getAll());
     this.dataSource = new MatTableDataSource(categories);
     this.table.dataSource = this.dataSource;
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
+    this.showLoading = false;
   }
 
   onNewCategoryClick() {
+    this.category = {
+      id: 0,
+      name: '',
+      description: ''
+    }
     this.showForm = true;
   }
 
@@ -69,7 +84,22 @@ export class CategoriesComponent implements AfterViewInit {
 
   async onSave(category: Category) {
     const saved = await lastValueFrom(this.categoryService.save(category));
-    console.log('Saved', saved);
     this.hideCategoryForm();
+  }
+
+  onEditCategoryClick(category:Category) {
+    this.category = category;
+    this.showForm = true;
+  }
+
+  async onDeleteCategoryClick(category:Category) {
+    console.log("delete category", category)
+
+    if (confirm(`Delete "${category.name}" with id ${category.id} ?`)) {
+      this.showLoading = true;
+      await lastValueFrom(this.categoryService.delete(category.id))
+      this.showLoading = false;
+      this.loadCategories();
+    }
   }
 }
