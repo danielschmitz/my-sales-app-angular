@@ -1,20 +1,17 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import {
-  MatTableModule,
   MatTable,
   MatTableDataSource,
 } from '@angular/material/table';
-import { MatPaginatorModule, MatPaginator } from '@angular/material/paginator';
-import { MatSortModule, MatSort } from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import { CategoriesItem } from './categories-datasource';
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
 import { CategoryService } from './category.service';
 import { lastValueFrom } from 'rxjs';
 import { Category } from './category.dto';
 import { CategoryFormComponent } from './form/form.component';
-import { MatIconModule } from '@angular/material/icon';
 import { LoadingBarComponent } from '../loading-bar.component';
+import { MaterialModule } from '../material.module';
 
 @Component({
   selector: 'app-categories',
@@ -26,16 +23,7 @@ import { LoadingBarComponent } from '../loading-bar.component';
 
   `,
   standalone: true,
-  imports: [
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatCardModule,
-    MatButtonModule,
-    MatIconModule,
-    CategoryFormComponent,
-    LoadingBarComponent
-  ],
+  imports: [MaterialModule, CategoryFormComponent, LoadingBarComponent],
 })
 export class CategoriesComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -72,8 +60,8 @@ export class CategoriesComponent implements AfterViewInit {
     this.category = {
       id: 0,
       name: '',
-      description: ''
-    }
+      description: '',
+    };
     this.showForm = true;
   }
 
@@ -87,17 +75,17 @@ export class CategoriesComponent implements AfterViewInit {
     this.hideCategoryForm();
   }
 
-  onEditCategoryClick(category:Category) {
+  onEditCategoryClick(category: Category) {
     this.category = category;
     this.showForm = true;
   }
 
-  async onDeleteCategoryClick(category:Category) {
-    console.log("delete category", category)
+  async onDeleteCategoryClick(category: Category) {
+    console.log('delete category', category);
 
     if (confirm(`Delete "${category.name}" with id ${category.id} ?`)) {
       this.showLoading = true;
-      await lastValueFrom(this.categoryService.delete(category.id))
+      await lastValueFrom(this.categoryService.delete(category.id));
       this.showLoading = false;
       this.loadCategories();
     }
