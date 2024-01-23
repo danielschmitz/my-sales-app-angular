@@ -37,14 +37,16 @@
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
         <td mat-cell *matCellDef="let row">
-          <button mat-button (click)="onEditCategoryClick(row)">Edit</button>
-          <button
-            mat-icon-button
-            color="warn"
-            (click)="onDeleteCategoryClick(row)"
-          >
-            <mat-icon>delete</mat-icon>
-          </button>
+          <div class="container">
+            <button mat-button (click)="onEditCategoryClick(row)">Edit</button>
+            <button
+              mat-icon-button
+              color="warn"
+              (click)="onDeleteCategoryClick(row)"
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
         </td>
       </ng-container>
 
