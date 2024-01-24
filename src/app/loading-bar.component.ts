@@ -16,5 +16,5 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
   styles: ``
 })
 export class LoadingBarComponent {
-  @Input() visible: Boolean = false;
+  @Input() visible: Boolean = true;
 }
