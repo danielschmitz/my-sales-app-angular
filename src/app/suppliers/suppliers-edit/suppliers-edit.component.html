@@ -1,1 +1,13 @@
-<p>suppliers-edit works!</p>
+<mat-card-subtitle> Edit Supplier </mat-card-subtitle>
+
+<br/>
+
+@if (supplierObservable|async) {
+
+  <mat-card-content>
+    <app-suppliers-form [supplier]="supplier" (save)="onSave($event)"></app-suppliers-form>
+  </mat-card-content>
+
+} @else {
+<loading-bar></loading-bar>
+}

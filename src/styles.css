@@ -15,6 +15,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   align-items: center;
   justify-content: center;
 }
+.width-full {
+  width: 100%;
+}
 .item-20 { flex: 0 0 20%; }
 .item-30 { flex: 0 0 30%; }
 .item-40 { flex: 0 0 40%; }

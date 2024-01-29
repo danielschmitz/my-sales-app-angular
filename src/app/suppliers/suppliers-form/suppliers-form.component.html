@@ -1,1 +1,96 @@
-<p>suppliers-form works!</p>
+<form [formGroup]="supplierForm" (ngSubmit)="onSubmit()">
+  <div class="container">
+    <mat-form-field class="item">
+      <input
+        matInput
+        placeholder="Company Name"
+        formControlName="companyName"
+      />
+      @if (supplierForm.controls['companyName'].hasError('required')) {
+      <mat-error> Company Name is required </mat-error>
+      } @if (supplierForm.controls['companyName'].hasError('minlength')) {
+      <mat-error> Company Name is too short </mat-error>
+      }
+    </mat-form-field>
+  </div>
+  <div class="container">
+    <mat-form-field class="item">
+      <input
+        matInput
+        placeholder="Contact Name"
+        formControlName="contactName"
+      />
+      @if (supplierForm.controls['contactName'].hasError('required')) {
+      <mat-error>Contact Name is required</mat-error>
+      } @if (supplierForm.controls['contactName'].hasError('minlength')) {
+      <mat-error>Contact Name is too short</mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field class="item">
+      <input
+        matInput
+        placeholder="Contact Title"
+        formControlName="contactTitle"
+      />
+      @if (supplierForm.controls['contactTitle'].hasError('required')) {
+      <mat-error>Contact Title is required</mat-error>
+      } @if (supplierForm.controls['contactTitle'].hasError('minlength')) {
+      <mat-error>Contact Title is too short</mat-error>
+      }
+    </mat-form-field>
+  </div>
+
+  <br />
+
+  <mat-card-subtitle>Address</mat-card-subtitle>
+
+  <div class="container" formGroupName="address">
+    <!-- Street -->
+    <mat-form-field class="item">
+      <input matInput placeholder="Street" formControlName="street" />
+    </mat-form-field>
+  </div>
+  <div class="container" formGroupName="address">
+    <!-- City -->
+    <mat-form-field class="item">
+      <input matInput placeholder="City" formControlName="city" />
+    </mat-form-field>
+
+    <!-- Region -->
+    <mat-form-field class="item">
+      <input matInput placeholder="Region" formControlName="region" />
+    </mat-form-field>
+
+    <!-- Country -->
+    <mat-form-field class="item">
+      <input matInput placeholder="Country" formControlName="country" />
+    </mat-form-field>
+  </div>
+  <div class="container" formGroupName="address">
+    <!-- Postal Code -->
+    <mat-form-field class="item">
+      <input matInput placeholder="Postal Code" formControlName="postalCode" />
+    </mat-form-field>
+
+    <!-- Phone -->
+    <mat-form-field class="item">
+      <input matInput placeholder="Phone" formControlName="phone" />
+    </mat-form-field>
+  </div>
+
+  <mat-card-actions class="container">
+    <button mat-button [disabled]="supplierForm.invalid" (click)="(onBack)">
+      Back
+    </button>
+    <div class="width-full"></div>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="supplierForm.invalid"
+      (click)="(onSubmit)"
+    >
+      Save
+    </button>
+  </mat-card-actions>
+</form>
