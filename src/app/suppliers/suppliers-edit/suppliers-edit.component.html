@@ -5,7 +5,7 @@
 @if (supplierObservable|async) {
 
   <mat-card-content>
-    <app-suppliers-form [supplier]="supplier" (save)="onSave($event)"></app-suppliers-form>
+    <app-suppliers-form [supplier]="supplier" (save)="onSave($event)" (back)="onBack()"></app-suppliers-form>
   </mat-card-content>
 
 } @else {

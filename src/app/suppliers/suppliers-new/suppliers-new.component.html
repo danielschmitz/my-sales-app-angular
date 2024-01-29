@@ -1,4 +1,8 @@
 
 <mat-card-subtitle>Create Supplier</mat-card-subtitle>
 <br/>
-<app-suppliers-form [supplier]="supplier"></app-suppliers-form>
+@if (supplierObservable|async) {
+  <app-suppliers-form [supplier]="supplier" (save)="onSave($event)" (back)="onBack()"></app-suppliers-form>
+} @else {
+  <loading-bar></loading-bar>
+}

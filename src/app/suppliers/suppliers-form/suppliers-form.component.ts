@@ -43,7 +43,8 @@ export class SuppliersFormComponent implements OnInit{
     this.save.emit(this.supplierForm.value as Supplier);
   }
 
-  onBack() {
+  onBack(event:Event) {
+    event.preventDefault();
     this.back.emit();
   }
 

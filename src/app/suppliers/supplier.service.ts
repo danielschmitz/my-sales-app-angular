@@ -32,8 +32,8 @@ export class SupplierService {
     return this.http.delete<Supplier>(environment.api + 'suppliers/' + id);
   }
 
-  public create(): Observable<Supplier> {
-    return of<Supplier>({
+  public create(): Supplier {
+    return {
       id: 0,
       companyName: '',
       contactName: '',
@@ -46,6 +46,6 @@ export class SupplierService {
         region: '',
         street: '',
       },
-    });
+    };
   }
 }

@@ -29,7 +29,7 @@ export const routes: Routes = [
         component: SuppliersEditComponent
       },
       {
-        path: 'delete/:id',
+        path: 'del/:id',
         component: SuppliersDeleteComponent
       },
       {
