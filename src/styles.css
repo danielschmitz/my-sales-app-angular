@@ -12,6 +12,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   flex-wrap: wrap;
 }
 .center {
+  text-align: center;
   align-items: center;
   justify-content: center;
 }

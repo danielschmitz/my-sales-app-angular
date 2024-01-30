@@ -20,6 +20,14 @@
         </button>
       }
       <span>Sales App</span>
+      <!-- CART BUTTON -->
+      <div class="width-full"></div>
+      <button mat-icon-button [routerLink]="['/checkout']">
+        <mat-icon
+          [matBadge]="cartService.itensInCart"
+          matBadgeColor="warn">
+          shopping_cart</mat-icon>
+      </button>
     </mat-toolbar>
     <!-- Add Content Here -->
     <div class="m-10">

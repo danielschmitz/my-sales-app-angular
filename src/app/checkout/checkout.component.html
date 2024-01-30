@@ -1,0 +1,28 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Checkout</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+      @for (item of items; track item.idProduct) {
+
+        <div class="container center">
+          <div class="item-50">
+            {{ item.name }}
+          </div>
+          <div class="item-20">{{ item.unitPrice | currency }}</div>
+          <div class="item-20">{{ item.quantity }}</div>
+          <div class="item-10">
+            <button mat-icon-button (click)="onRemoveItem(item)">
+              <mat-icon>remove</mat-icon>
+            </button>
+          </div>
+        </div>
+      }
+    <br />
+    Total: <strong>{{ cartService.total | currency }} </strong>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-button>Next</button>
+  </mat-card-actions>
+</mat-card>

@@ -6,6 +6,9 @@ import { SuppliersShowComponent } from './suppliers/suppliers-show/suppliers-sho
 import { SuppliersDeleteComponent } from './suppliers/suppliers-delete/suppliers-delete.component';
 import { SuppliersEditComponent } from './suppliers/suppliers-edit/suppliers-edit.component';
 import { SuppliersNewComponent } from './suppliers/suppliers-new/suppliers-new.component';
+import { ProductsComponent } from './products/products.component';
+import { ProductsListComponent } from './products/products-list/products-list.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 export const routes: Routes = [
   {
@@ -38,4 +41,14 @@ export const routes: Routes = [
       }
     ]
   },
+  {
+    path: '', component: ProductsComponent, children: [
+      {
+        path: '',
+        component: ProductsListComponent
+      },
+    ]
+  },
+  { path: 'checkout', component: CheckoutComponent },
+
 ];
