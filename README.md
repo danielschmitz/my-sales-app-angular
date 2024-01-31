@@ -5,6 +5,8 @@
   This is the source code of <a href="https://leanpub.com/book-angular" target="_blank">Angular 17 from Scratch</a>.
 </p>
 
+See the [app demo](https://danielschmitz.github.io/my-sales-app-angular/)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
