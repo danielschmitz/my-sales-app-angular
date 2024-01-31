@@ -1,8 +1,9 @@
 # MySalesApp
 
-Este é o código fonte do livro [Angular 17 from Scratch](https://leanpub.com/book-angular).
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.10.
+<p align="center">
+  <img src="https://d2sofvawe08yqg.cloudfront.net/book-angular/s_hero?1706698760"/> <br/>
+  This is the source code of <a href="https://leanpub.com/book-angular" target="_blank">Angular 17 from Scratch</a>.
+</p>
 
 ## Development server
 
