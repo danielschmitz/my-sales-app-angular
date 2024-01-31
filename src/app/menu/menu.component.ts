@@ -30,7 +30,7 @@ export class MenuComponent {
       label: 'Home'
     },
     {
-      path: '/categories',
+      path: 'categories',
       label: 'Categories'
     },
     {
