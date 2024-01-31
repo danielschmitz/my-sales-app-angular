@@ -18,6 +18,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "baseHref": "my-sales-app-angular",
             "outputPath": "dist/my-sales-app",
             "index": "src/index.html",
             "browser": "src/main.ts",
