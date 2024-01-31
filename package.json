@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng deploy --base-href=https://danielschmitz.github.io/my-sales-app-angular/"
+    "deploy": "ng deploy --base-href=/my-sales-app-angular/"
   },
   "private": true,
   "dependencies": {

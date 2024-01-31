@@ -26,7 +26,7 @@ interface MenuItem {
 export class MenuComponent {
   menuItems: Array<MenuItem> = [
     {
-      path: '/',
+      path: '',
       label: 'Home'
     },
     {
@@ -34,7 +34,7 @@ export class MenuComponent {
       label: 'Categories'
     },
     {
-      path: '/suppliers',
+      path: 'suppliers',
       label: 'Suppliers'
     },
   ]
