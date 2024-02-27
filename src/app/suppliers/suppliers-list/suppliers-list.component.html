@@ -1,6 +1,6 @@
 <mat-card-subtitle> Listing all Suppliers </mat-card-subtitle>
 
-@if (supplierObservable|async) {
+@if (suppliers$ | async; as suppliers) {
 
   <div class="container wrap">
   @for( supplier of suppliers; track supplier.id) {
@@ -11,8 +11,13 @@
   </div>
 
 } @else {
-<loading-bar></loading-bar>
+  <loading-bar></loading-bar>
 }
+
+@if (error) {
+  <span>{{ error }}</span>
+}
+
 <mat-card-actions align="end">
   <button mat-button [routerLink]="['/suppliers/new']">
     New

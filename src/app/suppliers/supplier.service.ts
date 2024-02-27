@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Supplier } from './suppliers.dto';
 import { Observable, of } from 'rxjs';
 import { environment } from '../../environments/environment';
@@ -8,10 +8,11 @@ import { environment } from '../../environments/environment';
   providedIn: 'root',
 })
 export class SupplierService {
-  constructor(private http: HttpClient) {}
+
+  private http = inject(HttpClient);
 
   public getAll(): Observable<Supplier[]> {
-    return this.http.get<Supplier[]>(environment.api + 'suppliers');
+    return this.http.get<Supplier[]>(environment.api + 'supplierss');
   }
 
   public getById(id: Number): Observable<Supplier> {
