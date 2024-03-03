@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { CategoriesComponent } from './categories/categories.component';
 import { SuppliersComponent } from './suppliers/suppliers.component';
 import { SuppliersListComponent } from './suppliers/suppliers-list/suppliers-list.component';
 import { SuppliersShowComponent } from './suppliers/suppliers-show/suppliers-show.component';
@@ -13,7 +12,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 export const routes: Routes = [
   {
     path:'categories',
-    component: CategoriesComponent
+    loadComponent: () => import('./categories/categories.component').then( c => c.CategoriesComponent)
   },
   {
     path: 'suppliers',

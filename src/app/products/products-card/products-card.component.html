@@ -1,0 +1,27 @@
+<div style="width: 300px">
+    <mat-card class="p-5">
+      <mat-card-title-group>
+        <mat-card-subtitle>
+          {{ product.category?.name }}
+        </mat-card-subtitle>
+        <mat-card-subtitle>
+          <h3>{{ product.name }}</h3>
+        </mat-card-subtitle>
+        <div>
+          <strong>{{ product.unitPrice | currency }} </strong>
+        </div>
+      </mat-card-title-group>
+      <mat-card-content>
+        Units in Stock: {{ product.unitsInStock }}
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <button
+          mat-icon-button
+          [disabled]="product.unitsInStock == 0"
+          (click)="onAddToCart(product)"
+        >
+          <mat-icon>add_shopping_cart</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>

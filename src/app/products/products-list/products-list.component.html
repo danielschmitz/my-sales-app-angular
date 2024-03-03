@@ -12,34 +12,17 @@
   </form>
 </div>
 <div class="container wrap">
-  @for(product of products; track product.id){
-  <div style="width: 300px">
-    <mat-card class="p-5">
-      <mat-card-title-group>
-        <mat-card-subtitle>
-          {{ product.category?.name }}
-        </mat-card-subtitle>
-        <mat-card-subtitle>
-          <h3>{{ product.name }}</h3>
-        </mat-card-subtitle>
-        <div>
-          <strong>{{ product.unitPrice | currency }} </strong>
-        </div>
-      </mat-card-title-group>
-      <mat-card-content>
-        Units in Stock: {{ product.unitsInStock }}
-      </mat-card-content>
-      <mat-card-actions align="end">
-        <button
-          mat-icon-button
-          [disabled]="product.unitsInStock == 0"
-          (click)="onAddToCart(product)"
-        >
-          <mat-icon>add_shopping_cart</mat-icon>
-        </button>
-      </mat-card-actions>
-    </mat-card>
-  </div>
+  <!-- @for (item of [].constructor(100); track $index) {
+    <div style="height:100px;width:100%">{{$index}}</div>
+  } -->
+  @for(product of products; track product.id){ 
+    @defer (on viewport){
+      <app-products-card [product]="product"></app-products-card>
+    } @placeholder {
+      <span>Placeholder</span>
+    } @loading  {
+      <span>Loading</span>
+    }
   }
 </div>
 } @else {

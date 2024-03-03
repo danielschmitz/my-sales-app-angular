@@ -12,7 +12,7 @@ export class SupplierService {
   private http = inject(HttpClient);
 
   public getAll(): Observable<Supplier[]> {
-    return this.http.get<Supplier[]>(environment.api + 'supplierss');
+    return this.http.get<Supplier[]>(environment.api + 'suppliers');
   }
 
   public getById(id: Number): Observable<Supplier> {
