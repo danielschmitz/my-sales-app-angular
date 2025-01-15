@@ -7,11 +7,10 @@ import { Observable, lastValueFrom } from 'rxjs';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-products',
-  standalone: true,
-  imports: [MaterialModule, RouterOutlet],
-  templateUrl: './products.component.html',
-  styles: ``,
+    selector: 'app-products',
+    imports: [MaterialModule, RouterOutlet],
+    templateUrl: './products.component.html',
+    styles: ``
 })
 export class ProductsComponent {
 

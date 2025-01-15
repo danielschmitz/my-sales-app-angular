@@ -13,15 +13,14 @@ interface MenuItem {
 }
 
 @Component({
-  selector: 'app-menu',
-  standalone: true,
-  imports: [MatListModule],
-  template: `
+    selector: 'app-menu',
+    imports: [MatListModule],
+    template: `
    @for (item of menuItems; track item.path) {
         <a mat-list-item [href]="item.path">{{item.label}}</a>
       }
   `,
-  styles: ``
+    styles: ``
 })
 export class MenuComponent {
   menuItems: Array<MenuItem> = [

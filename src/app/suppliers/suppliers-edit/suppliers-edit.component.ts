@@ -9,17 +9,16 @@ import { MaterialModule } from '../../material.module';
 import { SuppliersFormComponent } from '../suppliers-form/suppliers-form.component';
 
 @Component({
-  selector: 'app-suppliers-edit',
-  standalone: true,
-  imports: [
-    MaterialModule,
-    AsyncPipe,
-    LoadingBarComponent,
-    RouterLink,
-    SuppliersFormComponent,
-  ],
-  templateUrl: './suppliers-edit.component.html',
-  styles: ``,
+    selector: 'app-suppliers-edit',
+    imports: [
+        MaterialModule,
+        AsyncPipe,
+        LoadingBarComponent,
+        RouterLink,
+        SuppliersFormComponent,
+    ],
+    templateUrl: './suppliers-edit.component.html',
+    styles: ``
 })
 export class SuppliersEditComponent {
   route = inject(ActivatedRoute);

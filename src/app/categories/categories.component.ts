@@ -14,16 +14,15 @@ import { LoadingBarComponent } from '../loading-bar.component';
 import { MaterialModule } from '../material.module';
 
 @Component({
-  selector: 'app-categories',
-  templateUrl: './categories.component.html',
-  styles: `
+    selector: 'app-categories',
+    templateUrl: './categories.component.html',
+    styles: `
     .full-width-table {
       width: 100%;
     }
 
   `,
-  standalone: true,
-  imports: [MaterialModule, CategoryFormComponent, LoadingBarComponent],
+    imports: [MaterialModule, CategoryFormComponent, LoadingBarComponent]
 })
 export class CategoriesComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;

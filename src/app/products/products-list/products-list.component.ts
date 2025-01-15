@@ -11,11 +11,10 @@ import { CartItem } from '../../cart.dto';
 import { ProductsCardComponent } from '../products-card/products-card.component';
 
 @Component({
-  selector: 'app-products-list',
-  standalone: true,
-  templateUrl: './products-list.component.html',
-  styles: ``,
-  imports: [MaterialModule, AsyncPipe, LoadingBarComponent, CurrencyPipe, ProductsCardComponent],
+    selector: 'app-products-list',
+    templateUrl: './products-list.component.html',
+    styles: ``,
+    imports: [MaterialModule, AsyncPipe, LoadingBarComponent, CurrencyPipe, ProductsCardComponent]
 })
 export class ProductsListComponent implements OnInit {
 

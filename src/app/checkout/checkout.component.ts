@@ -5,11 +5,10 @@ import { CartItem } from '../cart.dto';
 import { CurrencyPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-checkout',
-  standalone: true,
-  imports: [MaterialModule, CurrencyPipe],
-  templateUrl: './checkout.component.html',
-  styles: ``
+    selector: 'app-checkout',
+    imports: [MaterialModule, CurrencyPipe],
+    templateUrl: './checkout.component.html',
+    styles: ``
 })
 export class CheckoutComponent implements OnInit{
   cartService = inject(CartService)

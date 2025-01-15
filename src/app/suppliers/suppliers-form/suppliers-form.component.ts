@@ -4,11 +4,10 @@ import { Supplier } from '../suppliers.dto';
 import { MaterialModule } from '../../material.module';
 
 @Component({
-  selector: 'app-suppliers-form',
-  standalone: true,
-  imports: [MaterialModule],
-  templateUrl: './suppliers-form.component.html',
-  styles: ``
+    selector: 'app-suppliers-form',
+    imports: [MaterialModule],
+    templateUrl: './suppliers-form.component.html',
+    styles: ``
 })
 export class SuppliersFormComponent implements OnInit{
 

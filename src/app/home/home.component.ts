@@ -14,22 +14,21 @@ import { CartService } from '../cart.service';
 import { MatBadgeModule } from '@angular/material/badge';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css',
-  standalone: true,
-  imports: [
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatListModule,
-    MatIconModule,
-    MatBadgeModule,
-    AsyncPipe,
-    MenuComponent,
-    RouterLink,
-    RouterOutlet
-  ]
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.css',
+    imports: [
+        MatToolbarModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatListModule,
+        MatIconModule,
+        MatBadgeModule,
+        AsyncPipe,
+        MenuComponent,
+        RouterLink,
+        RouterOutlet
+    ]
 })
 export class HomeComponent {
   private breakpointObserver = inject(BreakpointObserver);

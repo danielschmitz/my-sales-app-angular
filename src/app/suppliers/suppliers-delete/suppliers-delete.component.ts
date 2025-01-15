@@ -8,11 +8,10 @@ import { SupplierService } from '../supplier.service';
 import { Supplier } from '../suppliers.dto';
 
 @Component({
-  selector: 'app-suppliers-delete',
-  standalone: true,
-  imports: [MaterialModule, AsyncPipe, LoadingBarComponent, RouterLink],
-  templateUrl: './suppliers-delete.component.html',
-  styles: ``,
+    selector: 'app-suppliers-delete',
+    imports: [MaterialModule, AsyncPipe, LoadingBarComponent, RouterLink],
+    templateUrl: './suppliers-delete.component.html',
+    styles: ``
 })
 export class SuppliersDeleteComponent {
   route = inject(ActivatedRoute);

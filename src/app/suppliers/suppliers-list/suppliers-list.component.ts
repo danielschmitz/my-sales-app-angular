@@ -10,17 +10,16 @@ import { SupplierCardComponent } from './supplier-card/supplier-card.component';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
-  selector: 'app-suppliers-list',
-  standalone: true,
-  imports: [
-    MaterialModule,
-    LoadingBarComponent,
-    AsyncPipe,
-    RouterLink,
-    SupplierCardComponent,
-  ],
-  templateUrl: './suppliers-list.component.html',
-  styles: ``,
+    selector: 'app-suppliers-list',
+    imports: [
+        MaterialModule,
+        LoadingBarComponent,
+        AsyncPipe,
+        RouterLink,
+        SupplierCardComponent,
+    ],
+    templateUrl: './suppliers-list.component.html',
+    styles: ``
 })
 export class SuppliersListComponent implements OnInit {
   suppliers$: Observable<Supplier[]>;

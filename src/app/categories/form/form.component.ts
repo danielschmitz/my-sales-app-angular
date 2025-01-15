@@ -4,11 +4,10 @@ import { Category } from '../category.dto';
 import { MaterialModule } from '../../material.module';
 
 @Component({
-  selector: 'category-form',
-  standalone: true,
-  imports: [MaterialModule],
-  templateUrl: './form.component.html',
-  styles: ``
+    selector: 'category-form',
+    imports: [MaterialModule],
+    templateUrl: './form.component.html',
+    styles: ``
 })
 export class CategoryFormComponent {
 

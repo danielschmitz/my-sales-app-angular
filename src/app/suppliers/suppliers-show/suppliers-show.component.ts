@@ -8,11 +8,10 @@ import { AsyncPipe } from '@angular/common';
 import { LoadingBarComponent } from '../../loading-bar.component';
 
 @Component({
-  selector: 'app-suppliers-show',
-  standalone: true,
-  imports: [MaterialModule, AsyncPipe, LoadingBarComponent, RouterLink],
-  templateUrl: './suppliers-show.component.html',
-  styles: ``
+    selector: 'app-suppliers-show',
+    imports: [MaterialModule, AsyncPipe, LoadingBarComponent, RouterLink],
+    templateUrl: './suppliers-show.component.html',
+    styles: ``
 })
 export class SuppliersShowComponent implements OnInit {
   route = inject(ActivatedRoute);

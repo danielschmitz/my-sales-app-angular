@@ -4,11 +4,10 @@ import { Supplier } from '../../suppliers.dto';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-supplier-card',
-  standalone: true,
-  imports: [MaterialModule, RouterLink],
-  templateUrl: './supplier-card.component.html',
-  styles: `mat-card-content:hover{
+    selector: 'app-supplier-card',
+    imports: [MaterialModule, RouterLink],
+    templateUrl: './supplier-card.component.html',
+    styles: `mat-card-content:hover{
     background-color: #def;
     cursor: pointer;
   }`

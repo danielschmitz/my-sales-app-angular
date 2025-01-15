@@ -4,11 +4,10 @@ import { MaterialModule } from '../../material.module';
 import { Product } from '../product.dto';
 
 @Component({
-  selector: 'app-products-card',
-  standalone: true,
-  imports: [CommonModule, MaterialModule],
-  templateUrl: './products-card.component.html',
-  styles: ``,
+    selector: 'app-products-card',
+    imports: [CommonModule, MaterialModule],
+    templateUrl: './products-card.component.html',
+    styles: ``
 })
 export class ProductsCardComponent {
   @Input() product: Product;

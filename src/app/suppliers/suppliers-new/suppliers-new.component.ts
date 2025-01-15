@@ -9,16 +9,15 @@ import { AsyncPipe } from '@angular/common';
 import { LoadingBarComponent } from '../../loading-bar.component';
 
 @Component({
-  selector: 'app-suppliers-new',
-  standalone: true,
-  templateUrl: './suppliers-new.component.html',
-  styles: ``,
-  imports: [
-    MaterialModule,
-    SuppliersFormComponent,
-    AsyncPipe,
-    LoadingBarComponent,
-  ],
+    selector: 'app-suppliers-new',
+    templateUrl: './suppliers-new.component.html',
+    styles: ``,
+    imports: [
+        MaterialModule,
+        SuppliersFormComponent,
+        AsyncPipe,
+        LoadingBarComponent,
+    ]
 })
 export class SuppliersNewComponent implements OnInit {
   router = inject(Router);
