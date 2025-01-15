@@ -79,16 +79,14 @@
   </div>
 
   <mat-card-actions class="container">
-    <button mat-button (click)="(onBack($event))">
-      Back
-    </button>
+    <button mat-button (click)="onBack($event)">Back</button>
     <div class="width-full"></div>
     <button
       mat-raised-button
       color="primary"
       type="submit"
       [disabled]="supplierForm.invalid"
-      (click)="(onSubmit)"
+      (click)="onSubmit()"
     >
       Save
     </button>

@@ -4,20 +4,24 @@ import { Observable, lastValueFrom } from 'rxjs';
 import { Product } from '../product.dto';
 import { ProductService } from '../product.service';
 import { MaterialModule } from '../../material.module';
-import { AsyncPipe, CurrencyPipe } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { LoadingBarComponent } from '../../loading-bar.component';
 import { CartService } from '../../cart.service';
 import { CartItem } from '../../cart.dto';
 import { ProductsCardComponent } from '../products-card/products-card.component';
 
 @Component({
-    selector: 'app-products-list',
-    templateUrl: './products-list.component.html',
-    styles: ``,
-    imports: [MaterialModule, AsyncPipe, LoadingBarComponent, CurrencyPipe, ProductsCardComponent]
+  selector: 'app-products-list',
+  templateUrl: './products-list.component.html',
+  styles: ``,
+  imports: [
+    MaterialModule,
+    AsyncPipe,
+    LoadingBarComponent,
+    ProductsCardComponent,
+  ],
 })
 export class ProductsListComponent implements OnInit {
-
   productService = inject(ProductService);
   fb = inject(FormBuilder);
   cartService = inject(CartService);
